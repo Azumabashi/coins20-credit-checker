@@ -27,6 +27,7 @@ type Cond = object
     title: string
     cond: Regex
     required: int
+    matchType: MatchType
 
 proc str2score(s: string): Score = 
     case s:
