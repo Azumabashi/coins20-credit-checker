@@ -46,6 +46,8 @@ proc str2score(s: string): Score =
         result = Score.P
     of "F":
         result = Score.F
+    of "履修中":
+        result = Score.Taking
     else:
         echo "ERROR: Unknown score"
         quit(1)
