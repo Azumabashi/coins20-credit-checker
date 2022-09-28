@@ -30,6 +30,15 @@ type CreditCondition = object
     required: int
     matchType: MatchType
 
+const creditConditions: seq[CreditCondition] = @[
+    CreditCondition(
+        title: "主専攻実験A",
+        cond: "(ソフトウェアサイエンス|情報システム|知能情報メディア)実験A",
+        required: 3,
+        matchType: MatchType.CourseName
+    )
+]
+
 proc str2score(s: string): Score = 
     case s:
     of "A+":
