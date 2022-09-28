@@ -57,4 +57,8 @@ proc readCsv(): seq[TwinsData] =
     while not f.endOfFile():
         result.add(f.readLine().replace("\"").replace(" ").split(",").parseTwinsData)
 
-echo readCsv()
+proc main() = 
+    let data = readCsv()
+    echo data
+
+main()
