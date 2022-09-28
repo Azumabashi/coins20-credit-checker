@@ -26,7 +26,7 @@ type MatchType = enum
 
 type CreditCondition = object
     title: string
-    cond: seq[string]
+    cond: string
     required: int
     matchType: MatchType
 
