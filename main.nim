@@ -24,7 +24,7 @@ type MatchType = enum
     CourseCode
     CourseName
 
-type Cond = object
+type CreditCondition = object
     title: string
     cond: Regex
     required: int
