@@ -54,7 +54,7 @@ proc str2score(s: string): Score =
 
 proc parseTwinsData(data: seq[string]): TwinsData = 
     let score = str2score(data[7])
-    let isIncludeToGpa = data[8] != "C0" or score == Score.P or score == Score.F
+    let isIncludeToGpa = data[8] != "C0" or score == Score.P or score == Score.F or score == Score.Taking
     return TwinsData(
             id: data[2],
             name: data[3],
