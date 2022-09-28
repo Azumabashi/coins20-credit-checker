@@ -19,6 +19,10 @@ type TwinsData = object
     score: Score
     isIncludeToGpa: bool
 
+type MatchType = enum
+    CourseCode
+    CourseName
+
 type Cond = object
     title: string
     cond: Regex
