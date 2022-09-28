@@ -1,6 +1,7 @@
 import os
 import strutils
 import system
+import std/re
 
 type Score = enum
     APlus
@@ -17,6 +18,11 @@ type TwinsData = object
     credit: float
     score: Score
     isIncludeToGpa: bool
+
+type Cond = object
+    title: string
+    cond: Regex
+    required: int
 
 proc str2score(s: string): Score = 
     case s:
