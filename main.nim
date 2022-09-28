@@ -11,6 +11,7 @@ type Score = enum
     D
     P
     F
+    Taking
 
 type TwinsData = object
     id: string
