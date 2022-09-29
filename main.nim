@@ -281,14 +281,14 @@ proc readCsv(): seq[TwinsData] =
 proc main() = 
     let data = readCsv()
     for d in data:
-        for condition in creditConditions:
-            case condition.matchType:
-            of MatchType.CourseName:
-                if condition.cond == d.name:
-                    # echo "matched!"
-                    break
-            of MatchType.CourseCode:
-                if match(d.id, re(condition.cond)):
-                    break
-        echo d.id, d.name, " unmatched"
+        block match2Cond:
+            for condition in creditConditions:
+                case condition.matchType:
+                of MatchType.CourseName:
+                    if condition.cond == d.name:
+                        break match2Cond
+                of MatchType.CourseCode:
+                    if match(d.id, re(condition.cond)):
+                        break match2Cond
+            echo d.id, " ", d.name, " unmatched"
 main()
