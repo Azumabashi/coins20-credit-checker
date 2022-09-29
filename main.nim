@@ -3,6 +3,7 @@ import strutils
 import system
 import std/re
 import lib/types
+import sequtils
 
 proc isRequired(courseType: CourseType): bool = 
     case courseType
@@ -218,16 +219,27 @@ const creditConditions: seq[CreditCondition] = @[
     ),
 ]
 
-const requiredCreditNums = {
-    CourseType.SpecialtyRequired: CreditSum(max: 16, min: 16),
-    CourseType.SpecialtyElective: CreditSum(max: 36, min: 36),
-    CourseType.SpecialtyBasicRequired: CreditSum(max: 26, min: 26),
-    CourseType.SpecialtyBasicElective: CreditSum(max: 24, min: 24),
-    CourseType.CommonRequired: CreditSum(max: 12, min: 12),
-    CourseType.CommonElective: CreditSum(max: 5, min: 1),
-    CourseType.OtherRequired: CreditSum(max: 0, min: 0),
-    CourseType.OtherElective: CreditSum(max: 10, min: 6)
-}
+const requiredCreditNums = [
+    (CourseType.SpecialtyRequired, CreditSum(max: 16, min: 16)),
+    (CourseType.SpecialtyElective, CreditSum(max: 36, min: 36)),
+    (CourseType.SpecialtyBasicRequired, CreditSum(max: 26, min: 26)),
+    (CourseType.SpecialtyBasicElective, CreditSum(max: 24, min: 24)),
+    (CourseType.CommonRequired, CreditSum(max: 12, min: 12)),
+    (CourseType.CommonElective, CreditSum(max: 5, min: 1)),
+    (CourseType.OtherRequired, CreditSum(max: 0, min: 0)),
+    (CourseType.OtherElective, CreditSum(max: 10, min: 6))
+]
+
+proc generateSubjectTypes(): seq[SubjectType] = 
+    for requiredCreditNum in requiredCreditNums:
+        let
+            courseType = requiredCreditNum[0]
+            creditSum = requiredCreditNum[1]
+        result.add(SubjectType(
+            index: @[],
+            required: creditSum,
+            archived: 0
+        ))
 
 proc str2score(s: string): Score = 
     case s:
