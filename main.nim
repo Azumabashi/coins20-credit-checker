@@ -259,6 +259,17 @@ const creditConditions: seq[CreditCondition] = @[
     ),
 ]
 
+const requiredCreditNums = {
+    CourseType.SpecialtyRequired: 16,
+    CourseType.SpecialtyElective: 36,
+    CourseType.SpecialtyBasicRequired: 26,
+    CourseType.SpecialtyBasicElective: 24,
+    CourseType.CommonRequired: 12,
+    CourseType.CommonElective: 1,
+    CourseType.OtherRequired: 0,
+    CourseType.OtherElective: 6
+}
+
 proc str2score(s: string): Score = 
     case s:
     of "A+":
