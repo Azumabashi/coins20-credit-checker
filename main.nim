@@ -238,7 +238,7 @@ proc generateSubjectTypes(): seq[SubjectType] =
         result.add(SubjectType(
             index: @[],
             required: creditSum,
-            archived: 0
+            achieved: 0
         ))
 
 proc str2score(s: string): Score = 
