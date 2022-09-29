@@ -10,11 +10,11 @@ type Score = enum
 export Score
 
 type TwinsData = object
-    id: string
-    name: string
-    credit: float
-    score: Score
-    isIncludeToGpa: bool
+    id*: string
+    name*: string
+    credit*: float
+    score*: Score
+    isIncludeToGpa*: bool
 export TwinsData
 
 type MatchType = enum
@@ -34,19 +34,19 @@ type CourseType = enum
 export CourseType
 
 type CreditSum = object
-    max: int
-    min: int
+    max*: int
+    min*: int
 export CreditSum
 
 type SubjectType = object
-    index: seq[int]
-    required: int
-    achieved: int
+    index*: seq[int]
+    required*: int
+    achieved*: int
 export SubjectType
 
 type CreditCondition = object
-    title: string
-    cond: string
-    required: int
-    matchType: MatchType
+    title*: string
+    cond*: string
+    required*: int
+    matchType*: MatchType
 export CreditCondition
