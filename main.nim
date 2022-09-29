@@ -34,6 +34,11 @@ type CourseType = enum
     OtherRequired
     OtherElective
 
+type SubjectType = object
+    index: seq[int]
+    required: int
+    achieved: int
+
 proc isRequired(courseType: CourseType): bool = 
     case courseType
     of CourseType.SpecialtyRequired, CourseType.SpecialtyBasicRequired, CourseType.CommonRequired, CourseType.OtherRequired:
