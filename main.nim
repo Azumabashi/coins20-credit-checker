@@ -34,6 +34,12 @@ type CourseType = enum
     OtherRequired
     OtherElective
 
+proc isRequired(courseType: CourseType): bool = 
+    case courseType
+    of CourseType.SpecialtyRequired, CourseType.SpecialtyBasicRequired, CourseType.CommonRequired, CourseType.OtherRequired:
+        result = true
+    else:
+        result = false
 
 type CreditCondition = object
     title: string
