@@ -25,8 +25,15 @@ type MatchType = enum
     CourseName
 
 type CourseType = enum 
-    Required
-    Elective
+    SpecialtyRequired
+    SpecialtyElective
+    SpecialtyBasicRequired
+    SpecialtyBasicElective
+    CommonRequired
+    CommonElective
+    OtherRequired
+    OtherElective
+
 
 type CreditCondition = object
     title: string
