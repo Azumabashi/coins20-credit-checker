@@ -195,9 +195,45 @@ const creditConditions: seq[CreditCondition] = @[
     ),
     CreditCondition(
         title: "体育",
-        cond: ".*体育.*",
+        cond: "2\\d{6}",
+        required: 2,
+        matchType: MatchType. CourseCode
+    ),
+    CreditCondition(
+        title: "英語",
+        cond: "31[HJKL]\\d{4}",
+        required: 4,
+        matchType: MatchType. CourseCode
+    ),
+    CreditCondition(
+        title: "情報",
+        cond: "6\\d{6}",
+        required: 4,
+        matchType: MatchType. CourseCode
+    ),
+    CreditCondition(
+        title: "総合科目（学士基盤）",
+        cond: "12\\d{5}",
         required: 1,
-        matchType: MatchType. CourseName
+        matchType: MatchType. CourseCode
+    ),
+    CreditCondition(
+        title: "体育・外国語・国語・芸術",
+        cond: "\\d{7}",
+        required: 0,
+        matchType: MatchType. CourseCode
+    ),
+    CreditCondition(
+        title: "文系科目",
+        cond: "[A|B|C|D|V|W|Y].{6}",
+        required: 6,
+        matchType: MatchType. CourseCode
+    ),
+    CreditCondition(
+        title: "理系科目",
+        cond: "(E.{6}|F.{6}|GB\\d{5}|GC\\d{5}|H.{6})",
+        required: 0,
+        matchType: MatchType. CourseCode
     ),
 ]
 
