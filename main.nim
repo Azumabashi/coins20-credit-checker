@@ -201,7 +201,7 @@ const creditConditions: seq[CreditCondition] = @[
     ),
     CreditCondition(
         title: "英語",
-        cond: "31[HJKL]\\d{4}",
+        cond: "31[HJKL].{4}",
         required: 4,
         matchType: MatchType. CourseCode
     ),
