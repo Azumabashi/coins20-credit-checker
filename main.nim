@@ -264,14 +264,14 @@ const creditConditions: seq[CreditCondition] = @[
 ]
 
 const requiredCreditNums = {
-    CourseType.SpecialtyRequired: 16,
-    CourseType.SpecialtyElective: 36,
-    CourseType.SpecialtyBasicRequired: 26,
-    CourseType.SpecialtyBasicElective: 24,
-    CourseType.CommonRequired: 12,
-    CourseType.CommonElective: 1,
-    CourseType.OtherRequired: 0,
-    CourseType.OtherElective: 6
+    CourseType.SpecialtyRequired: CreditSum(max: 16, min: 16),
+    CourseType.SpecialtyElective: CreditSum(max: 36, min: 36),
+    CourseType.SpecialtyBasicRequired: CreditSum(max: 26, min: 26),
+    CourseType.SpecialtyBasicElective: CreditSum(max: 24, min: 24),
+    CourseType.CommonRequired: CreditSum(max: 12, min: 12),
+    CourseType.CommonElective: CreditSum(max: 5, min: 1),
+    CourseType.OtherRequired: CreditSum(max: 0, min: 0),
+    CourseType.OtherElective: CreditSum(max: 10, min: 6)
 }
 
 proc str2score(s: string): Score = 
