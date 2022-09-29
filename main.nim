@@ -34,6 +34,10 @@ type CourseType = enum
     OtherRequired
     OtherElective
 
+type CreditSum = object
+    max: int
+    min: int
+
 type SubjectType = object
     index: seq[int]
     required: int
