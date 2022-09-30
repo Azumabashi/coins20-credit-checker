@@ -74,6 +74,6 @@ proc fail(content: string) =
     resetAttributes(stdout)
 export fail
 
-proc isTaken(credit: Score): bool = 
-    result = credit != Score.D and credit != Score.Taking
+proc isTaken(score: Score): bool = 
+    result = score != Score.D and score != Score.Taking
 export isTaken
