@@ -391,7 +391,8 @@ proc showElectiveResult(courseType: CourseType) =
 proc showResult(courseType: CourseType) = 
     if subjectTypeConditions[courseType].required.min == 0:
         return
-    elif isRequired(courseType):
+    echo courseType2str(courseType)
+    if isRequired(courseType):
         showRequiredResult(courseType)
     else:
         showElectiveResult(courseType)
