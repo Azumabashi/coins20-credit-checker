@@ -5,6 +5,7 @@ import lib/types
 import lib/utils
 import sequtils
 import tables
+import strformat
 
 var creditConditions: seq[CreditCondition] = @[
     CreditCondition(
@@ -351,7 +352,7 @@ var subjectTypeConditions = courseType2SubjectType()
 proc isMatch(matchType: MatchType, condition: string, courseName: string, courseId: string): bool = 
     case matchType
     of MatchType.CourseName:
-        result = condition == courseName
+        result = match(courseName, re(condition))
     of MatchType.CourseCode:
         result = match(courseId, re(condition))
 
@@ -373,3 +374,8 @@ proc showResult(courseType: CourseType) =
             pass(course.title)
         elif isRequired(courseType):
             fail(course.title)
+
+proc main() = 
+    generateSeqInCreditConditions()
+
+main()
