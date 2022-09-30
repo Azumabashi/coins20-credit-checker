@@ -41,7 +41,7 @@ export CreditSum
 type SubjectType = object
     index*: seq[int]
     required*: CreditSum
-    achieved*: int
+    achieved*: float
     courseType*: CourseType
 export SubjectType
 
