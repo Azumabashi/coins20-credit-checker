@@ -364,7 +364,7 @@ proc generateSeqInCreditConditions() =
                     creditConditions[j].index.add(i)
                     break match
 
-proc showResult(courseType: CourseType) = 
+proc showRequiredResult(courseType: CourseType) = 
     let subjectTypeCondition = subjectTypeConditions[courseType]
     if subjectTypeCondition.required.min == 0:
         return
