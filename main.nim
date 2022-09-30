@@ -377,11 +377,9 @@ proc showRequiredResult(courseType: CourseType) =
         if creditSum(course.index) == course.required:
             pass(course.title)
         else:
-            echo course
             fail(course.title)
 
 proc showElectiveResult(courseType: CourseType) = 
-    echo subjectTypeConditions[courseType]
     let subjectTypeCondition = subjectTypeConditions[courseType]
     for subConditionIdx in subjectTypeCondition.index:
         let subCondition = creditConditions[subConditionIdx]
