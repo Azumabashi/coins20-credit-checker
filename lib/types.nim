@@ -52,4 +52,5 @@ type CreditCondition = object
     matchType*: MatchType
     courseType*: CourseType
     acquired*: bool
+    index*: seq[int]
 export CreditCondition
