@@ -139,6 +139,6 @@ proc calculateGPA(data: seq[TwinsData]): float =
     for d in data:
         if d.isIncludeToGpa:
             creditSum += d.credit
-            gpSum += getGp(d.score)
+            gpSum += getGp(d.score) * d.credit
     result = gpSum / creditSum
 export calculateGPA
