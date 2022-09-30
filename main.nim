@@ -413,25 +413,6 @@ proc generateSeqInCreditConditions() =
                     creditConditions[j].index.add(i)
                     break match
 
-proc match() = 
-    for d in data:
-        block match2Cond:
-            for i, condition in creditConditions:
-                case condition.matchType:
-                of MatchType.CourseName:
-                    if condition.cond == d.name:
-                        echo d.name
-                        subjectTypeConditions[condition.courseType].achieved += d.credit
-                        creditConditions[i].acquired = true
-                        break match2Cond
-                of MatchType.CourseCode:
-                    if match(d.id, re(condition.cond)):
-                        echo d.name
-                        subjectTypeConditions[condition.courseType].achieved += d.credit
-                        creditConditions[i].acquired = true
-                        break match2Cond
-            echo d.id, " ", d.name, " unmatched"
-
 proc pass(content: string) = 
     setBackgroundColor(stdout, bgGreen)
     stdout.write("PASS")
@@ -447,5 +428,3 @@ proc fail(content: string) =
     setForegroundColor(stdout, fgRed)
     echo fmt" {content}"
     resetAttributes(stdout)
-
-match()
