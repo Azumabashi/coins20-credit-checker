@@ -1,19 +1,10 @@
-import os
 import strutils
 import system
 import std/re
 import lib/types
+import lib/utils
 import sequtils
 import tables
-import terminal
-import strformat
-
-proc isRequired(courseType: CourseType): bool = 
-    case courseType
-    of CourseType.SpecialtyRequired, CourseType.SpecialtyBasicRequired, CourseType.CommonRequired, CourseType.OtherRequired:
-        result = true
-    else:
-        result = false
 
 var creditConditions: seq[CreditCondition] = @[
     CreditCondition(
@@ -354,47 +345,6 @@ proc generateSubjectTypes(): Table[CourseType, SubjectType] =
         )
     return table
 
-proc str2score(s: string): Score = 
-    case s:
-    of "A+":
-        result = Score.APlus
-    of "A":
-        result = Score.A
-    of "B":
-        result = Score.B
-    of "C":
-        result = Score.C
-    of "D":
-        result = Score.D
-    of "P":
-        result = Score.P
-    of "F":
-        result = Score.F
-    of "履修中":
-        result = Score.Taking
-    else:
-        echo "ERROR: Unknown score"
-        quit(1)
-
-proc parseTwinsData(data: seq[string]): TwinsData = 
-    let score = str2score(data[7])
-    let isIncludeToGpa = data[8] != "C0" or score == Score.P or score == Score.F or score == Score.Taking
-    return TwinsData(
-            id: data[2],
-            name: data[3],
-            credit: data[4].parseFloat,
-            score: score,
-            isIncludeToGpa: isIncludeToGpa
-        )
-
-proc readCsv(): seq[TwinsData] = 
-    let f = open(commandLineParams()[0], FileMode.fmRead)
-    defer:
-        close(f)
-    let _ = f.readLine()  # header を読み捨てる
-    while not f.endOfFile():
-        result.add(f.readLine().replace("\"").replace(" ").split(",").parseTwinsData)
-
 let data = readCsv()
 var subjectTypeConditions = generateSubjectTypes()
 
@@ -412,22 +362,6 @@ proc generateSeqInCreditConditions() =
                 if isMatch(condition.matchType, condition.cond, d.name, d.id):
                     creditConditions[j].index.add(i)
                     break match
-
-proc pass(content: string) = 
-    setBackgroundColor(stdout, bgGreen)
-    stdout.write("PASS")
-    resetAttributes(stdout)
-    setForegroundColor(stdout, fgGreen)
-    echo fmt" {content}"
-    resetAttributes(stdout)
-
-proc fail(content: string) = 
-    setBackgroundColor(stdout, bgRed)
-    stdout.write("FAIL")
-    resetAttributes(stdout)
-    setForegroundColor(stdout, fgRed)
-    echo fmt" {content}"
-    resetAttributes(stdout)
 
 proc showResult(courseType: CourseType) = 
     let subjectTypeCondition = subjectTypeConditions[courseType]
