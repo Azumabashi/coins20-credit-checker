@@ -351,7 +351,8 @@ var subjectTypeConditions = courseType2SubjectType()
 
 proc creditSum(courses: seq[int]): float = 
     for course in courses:
-        result += data[course].credit
+        if data[course].score.isTaken:
+            result += data[course].credit
 
 proc isMatch(matchType: MatchType, condition: string, courseName: string, courseId: string): bool = 
     case matchType
