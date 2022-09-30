@@ -271,7 +271,7 @@ proc generateIndex(courseType: CourseType): seq[int] =
             result.add(index)
 
 proc generateSubjectTypes(): Table[CourseType, SubjectType] = 
-    let table: Table[CourseType, SubjectType] = initTable[CourseType, SubjectType]()
+    var table: Table[CourseType, SubjectType] = initTable[CourseType, SubjectType]()
     for requiredCreditNum in requiredCreditNums:
         let
             courseType = requiredCreditNum[0]
