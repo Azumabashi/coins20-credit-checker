@@ -77,3 +77,23 @@ export fail
 proc isTaken(score: Score): bool = 
     result = score != Score.D and score != Score.Taking
 export isTaken
+
+proc courseType2str(courseType: CourseType): string = 
+    case courseType:
+    of SpecialtyRequired:
+        result = "専門・必修"
+    of SpecialtyElective:
+        result = "専門・選択必修"
+    of SpecialtyBasicRequired:
+        result = "専門基礎・必修"
+    of SpecialtyBasicElective:
+        result = "専門基礎・選択"
+    of CommonRequired:
+        result = "共通・必修"
+    of CommonElective:
+        result = "共通・選択"
+    of OtherRequired:
+        result = "関連・必修"
+    of OtherElective:
+        result = "関連・選択"
+export courseType2str
