@@ -362,7 +362,7 @@ proc readCsv(): seq[TwinsData] =
 proc main() = 
     let data = readCsv()
     var subjectTypeConditions = generateSubjectTypes()
-    for d in data:
+    for i, d in data:
         block match2Cond:
             for condition in creditConditions:
                 case condition.matchType:
@@ -370,11 +370,13 @@ proc main() =
                     if condition.cond == d.name:
                         echo d.name
                         subjectTypeConditions[condition.courseType].achieved += d.credit
+                        creditConditions[i].acquired = true
                         break match2Cond
                 of MatchType.CourseCode:
                     if match(d.id, re(condition.cond)):
                         echo d.name
                         subjectTypeConditions[condition.courseType].achieved += d.credit
+                        creditConditions[i].acquired = true
                         break match2Cond
             echo d.id, " ", d.name, " unmatched"
 main()
