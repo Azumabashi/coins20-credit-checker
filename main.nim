@@ -13,7 +13,7 @@ proc isRequired(courseType: CourseType): bool =
     else:
         result = false
 
-const creditConditions: seq[CreditCondition] = @[
+var creditConditions: seq[CreditCondition] = @[
     CreditCondition(
         title: "主専攻実験A",
         cond: "(ソフトウェアサイエンス|情報システム|知能情報メディア)実験A",
@@ -334,10 +334,12 @@ proc main() =
                 case condition.matchType:
                 of MatchType.CourseName:
                     if condition.cond == d.name:
+                        echo d.name
                         subjectTypeConditions[condition.courseType].achieved += d.credit
                         break match2Cond
                 of MatchType.CourseCode:
                     if match(d.id, re(condition.cond)):
+                        echo d.name
                         subjectTypeConditions[condition.courseType].achieved += d.credit
                         break match2Cond
             echo d.id, " ", d.name, " unmatched"
