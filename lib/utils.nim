@@ -78,6 +78,7 @@ export fail
 
 proc taking(content: string) = 
     setBackgroundColor(stdout, bgCyan)
+    setForegroundColor(stdout, fgWhite)
     stdout.write("TAKING")
     resetAttributes(stdout)
     setForegroundColor(stdout, fgCyan)
