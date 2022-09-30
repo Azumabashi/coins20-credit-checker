@@ -424,6 +424,9 @@ proc showElectiveResult(courseType: CourseType, courseName: string) =
             if course.score.isTaken:
                 indent(2)
                 pass(course.name)
+            elif course.score == Score.Taking:
+                indent(2)
+                taking(course.name)
 
 proc showResult(courseType: CourseType) = 
     if subjectTypeConditions[courseType].required.min == 0:
