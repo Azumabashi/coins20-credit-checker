@@ -391,12 +391,36 @@ proc showRequiredResult(courseType: CourseType, courseName: string) =
         else:
             fail(title)
 
-proc showElectiveResult(courseType: CourseType) = 
+proc showElectiveResult(courseType: CourseType, courseName: string) = 
     let subjectTypeCondition = subjectTypeConditions[courseType]
+    var hasTaken = newTable[string, bool]();
+    var allCreditSum: float = 0.0
+
+    for subconditionIdx in subjectTypeCondition.index:
+        let subCondition = creditConditions[subconditionIdx]
+        
+        var creditSum: float = 0.0;
+        for idx in subCondition.index:
+            creditSum += data[idx].credit
+        allCreditSum += creditSum
+        hasTaken[subCondition.title] = creditSum >= subCondition.required
+    
+    echo hasTaken, allCreditSum
+
+    # ToDO: 下が全部 OK
+    if allCreditSum >= subjectTypeCondition.required.min:
+        pass(courseName)
+    else:
+        fail(courseName)
+
     for subConditionIdx in subjectTypeCondition.index:
         let subCondition = creditConditions[subConditionIdx]
         indent(2)
-        echo subCondition.title
+        let title = subCondition.title
+        if hasTaken[title]:
+            pass(title)
+        else:
+            fail(title)
         for idx in subCondition.index:
             let course = data[idx]
             if course.score.isTaken:
