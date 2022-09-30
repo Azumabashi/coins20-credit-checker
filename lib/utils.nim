@@ -3,6 +3,7 @@ import strutils
 import os
 import terminal
 import strformat
+import sequtils
 
 proc isRequired(courseType: CourseType): bool = 
     case courseType
@@ -103,3 +104,7 @@ proc indent(n: int) =
     for _ in 0..<n:
         stdout.write(" ")
 export indent
+
+proc allTaken(arr: seq[bool]): bool = 
+    return arr.all(proc (x: bool):bool = x)
+export allTaken
