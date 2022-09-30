@@ -334,9 +334,11 @@ proc main() =
                 case condition.matchType:
                 of MatchType.CourseName:
                     if condition.cond == d.name:
+                        subjectTypeConditions[condition.courseType].achieved += d.credit
                         break match2Cond
                 of MatchType.CourseCode:
                     if match(d.id, re(condition.cond)):
+                        subjectTypeConditions[condition.courseType].achieved += d.credit
                         break match2Cond
             echo d.id, " ", d.name, " unmatched"
 main()
