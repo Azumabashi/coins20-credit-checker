@@ -374,6 +374,7 @@ proc showRequiredResult(courseType: CourseType) =
         return
     for i in subjectTypeCondition.index:
         let course = creditConditions[i]
+        indent(2)
         if creditSum(course.index) == course.required:
             pass(course.title)
         else:
