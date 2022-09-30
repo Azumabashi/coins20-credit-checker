@@ -58,6 +58,7 @@ export readCsv
 
 proc pass(content: string) = 
     setBackgroundColor(stdout, bgGreen)
+    setForegroundColor(stdout, fgBlack)
     stdout.write("PASS")
     resetAttributes(stdout)
     setForegroundColor(stdout, fgGreen)
