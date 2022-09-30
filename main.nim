@@ -405,6 +405,14 @@ proc isMatch(matchType: MatchType, condition: string, courseName: string, course
     of MatchType.CourseCode:
         result = match(courseId, re(condition))
 
+proc generateSeqInCreditConditions() = 
+    for i, d in data:
+        block match:
+            for j, condition in creditConditions:
+                if isMatch(condition.matchType, condition.cond, d.name, d.id):
+                    creditConditions[j].index.add(i)
+                    break match
+
 proc match() = 
     for d in data:
         block match2Cond:
