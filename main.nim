@@ -359,7 +359,7 @@ proc readCsv(): seq[TwinsData] =
     while not f.endOfFile():
         result.add(f.readLine().replace("\"").replace(" ").split(",").parseTwinsData)
 
-proc main() = 
+proc match() = 
     let data = readCsv()
     var subjectTypeConditions = generateSubjectTypes()
     for d in data:
@@ -379,4 +379,4 @@ proc main() =
                         creditConditions[i].acquired = true
                         break match2Cond
             echo d.id, " ", d.name, " unmatched"
-main()
+match()
