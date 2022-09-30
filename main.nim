@@ -447,5 +447,6 @@ proc main() =
     showResult(CommonElective)
     showResult(OtherRequired)
     showResult(OtherElective)
+    echo fmt"GPA = {calculateGPA(data)}"
 
 main()
