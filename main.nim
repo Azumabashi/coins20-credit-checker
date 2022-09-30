@@ -369,17 +369,27 @@ proc generateSeqInCreditConditions() =
                     creditConditions[j].index.add(i)
                     break match
 
-proc showRequiredResult(courseType: CourseType) = 
+proc showRequiredResult(courseType: CourseType, courseName: string) = 
     let subjectTypeCondition = subjectTypeConditions[courseType]
     if subjectTypeCondition.required.min == 0:
         return
+    var hasTaken: seq[bool] = @[]
     for i in subjectTypeCondition.index:
         let course = creditConditions[i]
+        hasTaken.add(creditSum(course.index) == course.required)
+    
+    if hasTaken.all(proc (x: bool): bool = x):
+        pass(courseName)
+    else:
+        fail(courseName)
+
+    for hasTakenIdx, creditConditionIdx in subjectTypeCondition.index:
+        let title = creditConditions[creditConditionIdx].title
         indent(4)
-        if creditSum(course.index) == course.required:
-            pass(course.title)
+        if hasTaken[hasTakenIdx]:
+            pass(title)
         else:
-            fail(course.title)
+            fail(title)
 
 proc showElectiveResult(courseType: CourseType) = 
     let subjectTypeCondition = subjectTypeConditions[courseType]
