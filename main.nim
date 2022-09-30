@@ -22,7 +22,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "主専攻実験B",
@@ -30,7 +31,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "卒業研究A",
@@ -38,7 +40,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "卒業研究B",
@@ -46,7 +49,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "専門語学A",
@@ -54,7 +58,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "専門語学B",
@@ -62,7 +67,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "GBx0",
@@ -70,7 +76,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 18,
         matchType: MatchType.CourseCode,
         courseType: CourseType.SpecialtyElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "GB(2|3|4)",
@@ -78,7 +85,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 0,
         matchType: MatchType.CourseCode,
         courseType: CourseType.SpecialtyElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "情報特別演習",
@@ -86,7 +94,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 0,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "線形代数A",
@@ -94,7 +103,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "線形代数B",
@@ -102,7 +112,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "微分積分A",
@@ -110,7 +121,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "微分積分B",
@@ -118,7 +130,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "情報数学A",
@@ -126,7 +139,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "専門英語基礎",
@@ -134,7 +148,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 1,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "プログラミング入門",
@@ -142,7 +157,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "コンピュータとプログラミング",
@@ -150,7 +166,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "データ構造とアルゴリズム",
@@ -158,7 +175,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "データ構造とアルゴリズム実験",
@@ -166,7 +184,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "論理回路",
@@ -174,7 +193,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "論理回路演習",
@@ -182,7 +202,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "確率・統計等",
@@ -190,7 +211,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 10,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "Computer Science in English",
@@ -198,7 +220,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "GB1",
@@ -206,7 +229,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 0,
         matchType: MatchType. CourseCode,
         courseType: CourseType.SpecialtyBasicElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "GA1",
@@ -214,7 +238,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 8,
         matchType: MatchType. CourseCode,
         courseType: CourseType.SpecialtyBasicElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "フレッシュマン・セミナー",
@@ -222,7 +247,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 1,
         matchType: MatchType. CourseName,
         courseType: CourseType.CommonRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "学問への誘い",
@@ -230,7 +256,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 1,
         matchType: MatchType. CourseName,
         courseType: CourseType.CommonRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "体育",
@@ -238,7 +265,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 2,
         matchType: MatchType. CourseCode,
         courseType: CourseType.CommonRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "英語",
@@ -246,7 +274,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 4,
         matchType: MatchType. CourseCode,
         courseType: CourseType.CommonRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "情報",
@@ -254,7 +283,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 4,
         matchType: MatchType. CourseCode,
         courseType: CourseType.CommonRequired,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "総合科目（学士基盤）",
@@ -262,7 +292,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 1,
         matchType: MatchType. CourseCode,
         courseType: CourseType.CommonElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "体育・外国語・国語・芸術",
@@ -270,7 +301,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 0,
         matchType: MatchType. CourseCode,
         courseType: CourseType.CommonElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "文系科目",
@@ -278,7 +310,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 6,
         matchType: MatchType. CourseCode,
         courseType: CourseType.OtherElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
     CreditCondition(
         title: "理系科目",
@@ -286,7 +319,8 @@ var creditConditions: seq[CreditCondition] = @[
         required: 0,
         matchType: MatchType. CourseCode,
         courseType: CourseType.OtherElective,
-        acquired: false
+        acquired: false,
+        index: @[]
     ),
 ]
 
