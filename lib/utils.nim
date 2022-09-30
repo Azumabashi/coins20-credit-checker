@@ -137,7 +137,7 @@ proc calculateGPA(data: seq[TwinsData]): float =
         creditSum: float = 0
         gpSum: float = 0
     for d in data:
-        if d.score != Score.P or d.score != Score.F or d.score != Score.Taking:
+        if d.isIncludeToGpa:
             creditSum += d.credit
             gpSum += getGp(d.score)
     result = gpSum / creditSum
