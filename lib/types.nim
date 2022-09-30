@@ -49,4 +49,5 @@ type CreditCondition = object
     cond*: string
     required*: int
     matchType*: MatchType
+    courseType*: CourseType
 export CreditCondition
