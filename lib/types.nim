@@ -48,7 +48,7 @@ export SubjectType
 type CreditCondition = object
     title*: string
     cond*: string
-    required*: int
+    required*: float
     matchType*: MatchType
     courseType*: CourseType
     acquired*: bool
