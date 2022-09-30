@@ -359,9 +359,10 @@ proc readCsv(): seq[TwinsData] =
     while not f.endOfFile():
         result.add(f.readLine().replace("\"").replace(" ").split(",").parseTwinsData)
 
+let data = readCsv()
+var subjectTypeConditions = generateSubjectTypes()
+
 proc match() = 
-    let data = readCsv()
-    var subjectTypeConditions = generateSubjectTypes()
     for d in data:
         block match2Cond:
             for i, condition in creditConditions:
