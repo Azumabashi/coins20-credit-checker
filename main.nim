@@ -378,7 +378,7 @@ proc showRequiredResult(courseType: CourseType, courseName: string) =
         let course = creditConditions[i]
         hasTaken.add(creditSum(course.index) == course.required)
     
-    if hasTaken.all(proc (x: bool): bool = x):
+    if hasTaken.allTaken:
         pass(courseName)
     else:
         fail(courseName)
