@@ -118,3 +118,16 @@ export indent
 proc allTaken(arr: seq[bool]): bool = 
     return arr.all(proc (x: bool):bool = x)
 export allTaken
+
+proc getGp(score: Score): float = 
+    case score
+    of Score.APlus:
+        result = 4.3
+    of Score.A:
+        result = 4.0
+    of Score.B:
+        result = 3.0
+    of Score.C:
+        result = 2.0
+    else:
+        result = 0.0
