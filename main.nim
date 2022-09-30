@@ -6,6 +6,7 @@ import lib/types
 import sequtils
 import tables
 import terminal
+import strformat
 
 proc isRequired(courseType: CourseType): bool = 
     case courseType
@@ -386,7 +387,8 @@ proc pass(content: string) =
     setBackgroundColor(stdout, bgGreen)
     stdout.write("PASS")
     resetAttributes(stdout)
-    stdout.write(" ")
-    echo content
+    setForegroundColor(stdout, fgGreen)
+    echo fmt" {content}"
+    resetAttributes(stdout)
 
 match()
