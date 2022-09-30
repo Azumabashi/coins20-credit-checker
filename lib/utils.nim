@@ -131,3 +131,14 @@ proc getGp(score: Score): float =
         result = 2.0
     else:
         result = 0.0
+
+proc calculateGPA(data: seq[TwinsData]): float = 
+    var
+        creditSum: float = 0
+        gpSum: float = 0
+    for d in data:
+        if d.score != Score.P or d.score != Score.F or d.score != Score.Taking:
+            creditSum += d.credit
+            gpSum += getGp(d.score)
+    result = gpSum / creditSum
+export calculateGPA
