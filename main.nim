@@ -275,7 +275,7 @@ proc generateSubjectTypes(): seq[SubjectType] =
             courseType = requiredCreditNum[0]
             creditSum = requiredCreditNum[1]
         result.add(SubjectType(
-            index: @[],
+            index: generateIndex(courseType),
             required: creditSum,
             achieved: 0,
             courseType: courseType
