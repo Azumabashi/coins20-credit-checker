@@ -76,6 +76,15 @@ proc fail(content: string) =
     resetAttributes(stdout)
 export fail
 
+proc taking(content: string) = 
+    setBackgroundColor(stdout, bgCyan)
+    stdout.write("TAKING")
+    resetAttributes(stdout)
+    setForegroundColor(stdout, fgCyan)
+    echo fmt" {content}"
+    resetAttributes(stdout)
+export taking
+
 proc isTaken(score: Score): bool = 
     result = score != Score.D and score != Score.Taking
 export isTaken
