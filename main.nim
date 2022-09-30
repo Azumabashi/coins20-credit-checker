@@ -264,6 +264,11 @@ const requiredCreditNums = [
     (CourseType.OtherElective, CreditSum(max: 10, min: 6))
 ]
 
+proc generateIndex(courseType: CourseType): seq[int] = 
+    for index, creditCondition in creditConditions:
+        if creditCondition.courseType == courseType:
+            result.add(index)
+
 proc generateSubjectTypes(): seq[SubjectType] = 
     for requiredCreditNum in requiredCreditNums:
         let
