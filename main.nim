@@ -382,12 +382,11 @@ proc match() =
                         break match2Cond
             echo d.id, " ", d.name, " unmatched"
 
-proc pass(args: seq[string]) = 
-    for a in args:
-        setBackgroundColor(stdout, bgGreen)
-        stdout.write("PASS")
-        resetAttributes(stdout)
-        stdout.write(" ")
-        echo a
+proc pass(content: string) = 
+    setBackgroundColor(stdout, bgGreen)
+    stdout.write("PASS")
+    resetAttributes(stdout)
+    stdout.write(" ")
+    echo content
 
 match()
