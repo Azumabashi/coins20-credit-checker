@@ -327,8 +327,7 @@ proc readCsv(): seq[TwinsData] =
 
 proc main() = 
     let data = readCsv()
-    var conditions = generateSubjectTypes()
-    echo conditions
+    var subjectTypeConditions = generateSubjectTypes()
     for d in data:
         block match2Cond:
             for condition in creditConditions:
