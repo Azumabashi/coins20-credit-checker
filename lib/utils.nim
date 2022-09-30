@@ -73,3 +73,7 @@ proc fail(content: string) =
     echo fmt" {content}"
     resetAttributes(stdout)
 export fail
+
+proc isTaken(credit: Score): bool = 
+    result = credit != Score.D and credit != Score.Taking
+export isTaken
