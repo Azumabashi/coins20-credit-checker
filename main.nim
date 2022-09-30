@@ -395,6 +395,7 @@ proc showElectiveResult(courseType: CourseType, courseName: string) =
     let subjectTypeCondition = subjectTypeConditions[courseType]
     var hasTaken = newTable[string, bool]();
     var allCreditSum: float = 0.0
+    var isSubConditionsSatisfied = true;
 
     for subconditionIdx in subjectTypeCondition.index:
         let subCondition = creditConditions[subconditionIdx]
@@ -404,11 +405,10 @@ proc showElectiveResult(courseType: CourseType, courseName: string) =
             creditSum += data[idx].credit
         allCreditSum += creditSum
         hasTaken[subCondition.title] = creditSum >= subCondition.required
-    
-    echo hasTaken, allCreditSum
+        if not hasTaken[subCondition.title]:
+            isSubConditionsSatisfied = false
 
-    # ToDO: 下が全部 OK
-    if allCreditSum >= subjectTypeCondition.required.min:
+    if allCreditSum >= subjectTypeCondition.required.min and isSubConditionsSatisfied:
         pass(courseName)
     else:
         fail(courseName)
