@@ -384,9 +384,12 @@ proc showElectiveResult(courseType: CourseType) =
     let subjectTypeCondition = subjectTypeConditions[courseType]
     for subConditionIdx in subjectTypeCondition.index:
         let subCondition = creditConditions[subConditionIdx]
+        indent(2)
+        echo subCondition.title
         for idx in subCondition.index:
             let course = data[idx]
             if course.score.isTaken:
+                indent(4)
                 pass(course.name)
 
 proc showResult(courseType: CourseType) = 
