@@ -391,4 +391,12 @@ proc pass(content: string) =
     echo fmt" {content}"
     resetAttributes(stdout)
 
+proc fail(content: string) = 
+    setBackgroundColor(stdout, bgRed)
+    stdout.write("FAIL")
+    resetAttributes(stdout)
+    setForegroundColor(stdout, fgRed)
+    echo fmt" {content}"
+    resetAttributes(stdout)
+
 match()
