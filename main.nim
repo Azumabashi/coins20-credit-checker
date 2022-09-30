@@ -163,7 +163,7 @@ var creditConditions: seq[CreditCondition] = @[
     ),
     CreditCondition(
         title: "データ構造とアルゴリズム",
-        cond: "データ構造とアルゴリズム",
+        cond: "データ構造とアルゴリズム$",
         required: 3,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
@@ -181,7 +181,7 @@ var creditConditions: seq[CreditCondition] = @[
     ),
     CreditCondition(
         title: "論理回路",
-        cond: "論理回路",
+        cond: "論理回路$",
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
