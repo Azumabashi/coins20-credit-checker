@@ -25,7 +25,7 @@ proc str2score(s: string): Score =
         result = Score.C
     of "D":
         result = Score.D
-    of "P":
+    of "P", "認":
         result = Score.P
     of "F":
         result = Score.F
