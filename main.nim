@@ -190,7 +190,7 @@ var creditConditions: seq[CreditCondition] = @[
     ),
     CreditCondition(
         title: "論理回路演習",
-        cond: "論理回路演習",
+        cond: "論理回路(演習|実験)",
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicRequired,
@@ -377,6 +377,7 @@ proc showRequiredResult(courseType: CourseType) =
         if creditSum(course.index) == course.required:
             pass(course.title)
         else:
+            echo course
             fail(course.title)
 
 proc showElectiveResult(courseType: CourseType) = 
