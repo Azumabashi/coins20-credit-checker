@@ -385,6 +385,14 @@ proc showElectiveResult(courseType: CourseType) =
             if course.score.isTaken:
                 pass(course.name)
 
+proc showResult(courseType: CourseType) = 
+    if subjectTypeConditions[courseType].required.min == 0:
+        return
+    elif isRequired(courseType):
+        showRequiredResult(courseType)
+    else:
+        showElectiveResult(courseType)
+
 proc main() = 
     generateSeqInCreditConditions()
 
