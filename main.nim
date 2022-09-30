@@ -4,6 +4,7 @@ import system
 import std/re
 import lib/types
 import sequtils
+import tables
 
 proc isRequired(courseType: CourseType): bool = 
     case courseType
@@ -269,17 +270,19 @@ proc generateIndex(courseType: CourseType): seq[int] =
         if creditCondition.courseType == courseType:
             result.add(index)
 
-proc generateSubjectTypes(): seq[SubjectType] = 
+proc generateSubjectTypes(): Table[CourseType, SubjectType] = 
+    let table: Table[CourseType, SubjectType] = initTable[CourseType, SubjectType]()
     for requiredCreditNum in requiredCreditNums:
         let
             courseType = requiredCreditNum[0]
             creditSum = requiredCreditNum[1]
-        result.add(SubjectType(
+        table[courseType] = SubjectType(
             index: generateIndex(courseType),
             required: creditSum,
             achieved: 0,
             courseType: courseType
-        ))
+        )
+    return table
 
 proc str2score(s: string): Score = 
     case s:
