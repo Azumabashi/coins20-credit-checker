@@ -5,6 +5,7 @@ import std/re
 import lib/types
 import sequtils
 import tables
+import terminal
 
 proc isRequired(courseType: CourseType): bool = 
     case courseType
@@ -380,4 +381,13 @@ proc match() =
                         creditConditions[i].acquired = true
                         break match2Cond
             echo d.id, " ", d.name, " unmatched"
+
+proc pass(args: seq[string]) = 
+    for a in args:
+        setBackgroundColor(stdout, bgGreen)
+        stdout.write("PASS")
+        resetAttributes(stdout)
+        stdout.write(" ")
+        echo a
+
 match()
