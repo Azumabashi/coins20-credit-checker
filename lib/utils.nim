@@ -38,7 +38,7 @@ export str2score
 
 proc parseTwinsData(data: seq[string]): TwinsData = 
     let score = str2score(data[7])
-    let isIncludeToGpa = data[8] != "C0" or score != Score.P or score != Score.F or score != Score.Taking
+    let isIncludeToGpa = data[8] != "C0" and score != Score.P and score != Score.F and score != Score.Taking
     return TwinsData(
             id: data[2],
             name: data[3],
