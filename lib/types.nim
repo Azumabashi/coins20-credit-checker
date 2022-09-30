@@ -51,5 +51,5 @@ type CreditCondition = object
     required*: int
     matchType*: MatchType
     courseType*: CourseType
-    acquired: bool
+    acquired*: bool
 export CreditCondition
