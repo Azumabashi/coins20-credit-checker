@@ -42,6 +42,7 @@ type SubjectType = object
     index*: seq[int]
     required*: CreditSum
     achieved*: int
+    courseType*: CourseType
 export SubjectType
 
 type CreditCondition = object
