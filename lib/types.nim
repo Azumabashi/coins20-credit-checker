@@ -34,8 +34,8 @@ type CourseType = enum
 export CourseType
 
 type CreditSum = object
-    max*: int
-    min*: int
+    max*: float
+    min*: float
 export CreditSum
 
 type SubjectType = object
