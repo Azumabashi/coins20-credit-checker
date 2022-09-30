@@ -375,6 +375,16 @@ proc showRequiredResult(courseType: CourseType) =
         else:
             fail(course.title)
 
+proc showElectiveResult(courseType: CourseType) = 
+    echo subjectTypeConditions[courseType]
+    let subjectTypeCondition = subjectTypeConditions[courseType]
+    for subConditionIdx in subjectTypeCondition.index:
+        let subCondition = creditConditions[subConditionIdx]
+        for idx in subCondition.index:
+            let course = data[idx]
+            if course.score.isTaken:
+                pass(course.name)
+
 proc main() = 
     generateSeqInCreditConditions()
 
