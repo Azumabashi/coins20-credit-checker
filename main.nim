@@ -335,7 +335,7 @@ const requiredCreditNums = [
     (CourseType.OtherElective, CreditSum(max: 10, min: 6))
 ]
 
-proc generateIndex(courseType: CourseType): seq[int] = 
+proc generateSubjectTypeIndex(courseType: CourseType): seq[int] = 
     for index, creditCondition in creditConditions:
         if creditCondition.courseType == courseType:
             result.add(index)
@@ -347,7 +347,7 @@ proc generateSubjectTypes(): Table[CourseType, SubjectType] =
             courseType = requiredCreditNum[0]
             creditSum = requiredCreditNum[1]
         table[courseType] = SubjectType(
-            index: generateIndex(courseType),
+            index: generateSubjectTypeIndex(courseType),
             required: creditSum,
             achieved: 0,
             courseType: courseType
