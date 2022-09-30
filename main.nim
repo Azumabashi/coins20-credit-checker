@@ -385,7 +385,7 @@ proc showRequiredResult(courseType: CourseType, courseName: string) =
 
     for hasTakenIdx, creditConditionIdx in subjectTypeCondition.index:
         let title = creditConditions[creditConditionIdx].title
-        indent(4)
+        indent(2)
         if hasTaken[hasTakenIdx]:
             pass(title)
         else:
@@ -415,7 +415,7 @@ proc showElectiveResult(courseType: CourseType, courseName: string) =
 
     for subConditionIdx in subjectTypeCondition.index:
         let subCondition = creditConditions[subConditionIdx]
-        indent(2)
+        indent(1)
         let title = subCondition.title
         if hasTaken[title]:
             pass(title)
@@ -424,7 +424,7 @@ proc showElectiveResult(courseType: CourseType, courseName: string) =
         for idx in subCondition.index:
             let course = data[idx]
             if course.score.isTaken:
-                indent(4)
+                indent(2)
                 pass(course.name)
 
 proc showResult(courseType: CourseType) = 
