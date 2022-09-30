@@ -431,11 +431,11 @@ proc fail(content: string) =
 
 proc showResult(courseType: CourseType) = 
     let subjectTypeCondition = subjectTypeConditions[courseType]
-    if subjectTypeCondition.required.min == 0 or not isRequired(courseType):
+    if subjectTypeCondition.required.min == 0:
         return
     for i in subjectTypeCondition.index:
         let course = creditConditions[i]
         if course.acquired:
             pass(course.title)
-        else:
+        elif isRequired(courseType):
             fail(course.title)
