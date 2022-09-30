@@ -331,7 +331,7 @@ proc generateSubjectTypeIndex(courseType: CourseType): seq[int] =
         if creditCondition.courseType == courseType:
             result.add(index)
 
-proc generateSubjectTypes(): Table[CourseType, SubjectType] = 
+proc CourseType2SubjectType(): Table[CourseType, SubjectType] = 
     var table: Table[CourseType, SubjectType] = initTable[CourseType, SubjectType]()
     for requiredCreditNum in requiredCreditNums:
         let
@@ -346,7 +346,7 @@ proc generateSubjectTypes(): Table[CourseType, SubjectType] =
     return table
 
 let data = readCsv()
-var subjectTypeConditions = generateSubjectTypes()
+var subjectTypeConditions = CourseType2SubjectType()
 
 proc isMatch(matchType: MatchType, condition: string, courseName: string, courseId: string): bool = 
     case matchType
