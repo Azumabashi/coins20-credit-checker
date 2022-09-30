@@ -238,7 +238,8 @@ proc generateSubjectTypes(): seq[SubjectType] =
         result.add(SubjectType(
             index: @[],
             required: creditSum,
-            achieved: 0
+            achieved: 0,
+            courseType: courseType
         ))
 
 proc str2score(s: string): Score = 
