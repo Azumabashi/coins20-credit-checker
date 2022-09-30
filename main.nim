@@ -372,7 +372,7 @@ proc showResult(courseType: CourseType) =
         let course = creditConditions[i]
         if course.acquired:
             pass(course.title)
-        elif isRequired(courseType):
+        else:
             fail(course.title)
 
 proc main() = 
