@@ -428,3 +428,14 @@ proc fail(content: string) =
     setForegroundColor(stdout, fgRed)
     echo fmt" {content}"
     resetAttributes(stdout)
+
+proc showRequiredResult(courseType: CourseType) = 
+    let subjectTypeCondition = subjectTypeConditions[courseType]
+    if subjectTypeCondition.required.min == 0 or not isRequired(courseType):
+        return
+    for i in subjectTypeCondition.index:
+        let course = creditConditions[i]
+        if course.acquired:
+            pass(course.title)
+        else:
+            fail(course.title)
