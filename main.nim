@@ -430,11 +430,11 @@ proc showElectiveResult(courseType: CourseType, courseName: string) =
 proc showResult(courseType: CourseType) = 
     if subjectTypeConditions[courseType].required.min == 0:
         return
-    echo courseType2str(courseType)
+    let courseTypeStr = courseType2str(courseType)
     if isRequired(courseType):
-        showRequiredResult(courseType, courseType2str(courseType))
+        showRequiredResult(courseType, courseTypeStr)
     else:
-        showElectiveResult(courseType)
+        showElectiveResult(courseType, courseTypeStr)
 
 proc main() = 
     generateSeqInCreditConditions()
