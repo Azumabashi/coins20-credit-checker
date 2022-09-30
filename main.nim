@@ -398,6 +398,13 @@ proc readCsv(): seq[TwinsData] =
 let data = readCsv()
 var subjectTypeConditions = generateSubjectTypes()
 
+proc isMatch(matchType: MatchType, condition: string, courseName: string, courseId: string): bool = 
+    case matchType
+    of MatchType.CourseName:
+        result = condition == courseName
+    of MatchType.CourseCode:
+        result = match(courseId, re(condition))
+
 proc match() = 
     for d in data:
         block match2Cond:
