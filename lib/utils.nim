@@ -97,3 +97,8 @@ proc courseType2str(courseType: CourseType): string =
     of OtherElective:
         result = "関連・選択"
 export courseType2str
+
+proc indent(n: int) = 
+    for _ in 0..<n:
+        stdout.write(" ")
+export indent
