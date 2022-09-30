@@ -102,7 +102,7 @@ export courseType2str
 
 proc indent(n: int) = 
     for _ in 0..<n:
-        stdout.write(" ")
+        stdout.write("    ")
 export indent
 
 proc allTaken(arr: seq[bool]): bool = 
