@@ -429,7 +429,7 @@ proc fail(content: string) =
     echo fmt" {content}"
     resetAttributes(stdout)
 
-proc showRequiredResult(courseType: CourseType) = 
+proc showResult(courseType: CourseType) = 
     let subjectTypeCondition = subjectTypeConditions[courseType]
     if subjectTypeCondition.required.min == 0 or not isRequired(courseType):
         return
