@@ -208,7 +208,7 @@ var creditConditions: seq[CreditCondition] = @[
     ),
     CreditCondition(
         title: "Computer Science in English",
-        cond: "Computer Science in English (A|B)",
+        cond: "ComputerScienceinEnglish(A|B)",
         required: 2,
         matchType: MatchType.CourseName,
         courseType: CourseType.SpecialtyBasicElective,
