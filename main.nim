@@ -408,7 +408,7 @@ proc showResult(courseType: CourseType) =
         return
     echo courseType2str(courseType)
     if isRequired(courseType):
-        showRequiredResult(courseType)
+        showRequiredResult(courseType, courseType2str(courseType))
     else:
         showElectiveResult(courseType)
 
