@@ -349,6 +349,10 @@ proc courseType2SubjectType(): Table[CourseType, SubjectType] =
 let data = readCsv()
 var subjectTypeConditions = courseType2SubjectType()
 
+proc creditSum(courses: seq[int]): float = 
+    for course in courses:
+        result += data[course].credit
+
 proc isMatch(matchType: MatchType, condition: string, courseName: string, courseId: string): bool = 
     case matchType
     of MatchType.CourseName:
