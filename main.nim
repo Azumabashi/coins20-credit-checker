@@ -395,5 +395,13 @@ proc showResult(courseType: CourseType) =
 
 proc main() = 
     generateSeqInCreditConditions()
+    showResult(SpecialtyRequired)
+    showResult(SpecialtyElective)
+    showResult(SpecialtyBasicRequired)
+    showResult(SpecialtyBasicElective)
+    showResult(CommonRequired)
+    showResult(CommonElective)
+    showResult(OtherRequired)
+    showResult(OtherElective)
 
 main()
